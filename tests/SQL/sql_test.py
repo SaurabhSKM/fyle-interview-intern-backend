@@ -44,7 +44,7 @@ def create_n_graded_assignments_for_teacher(number: int = 0, teacher_id: int = 1
             grade_a_counter = grade_a_counter + 1
 
     # Commit changes to the database
-    db.session.commit()
+    db.session.flush()
 
     # Return the count of assignments with grade 'A'
     return grade_a_counter
@@ -76,7 +76,7 @@ def test_get_assignments_in_various_states():
     # Flush the changes to the database session
     db.session.flush()
     # Commit the changes to the database
-    db.session.commit()
+    #db.session.commit()
 
     # Execute the SQL query again and compare the updated result with the expected result
     sql_result = db.session.execute(text(sql)).fetchall()
