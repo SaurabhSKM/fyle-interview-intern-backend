@@ -10,6 +10,8 @@ This challenge involves writing a backend service for a classroom. The challenge
 
 ## Coverage Report
 
+![Tests](tests_passed.png)
+
 ![Coverage Report](coverage_report_flask.png)
 
 ## Installation
@@ -45,3 +47,29 @@ pytest -vvv -s tests/
 # pytest --cov
 # open htmlcov/index.html
 ```
+
+## Building docker image
+
+```
+docker build --tag flask-app .
+```
+To check images present :-
+```
+docker images 
+```
+
+## Runing app through docker 
+
+```
+docker run -d -p 7755:7755 flask-app
+```
+
+## Running app through docker-compose
+
+```
+docker compose up
+```
+
+## Sample Docker run image
+
+![Sample](docker_run_sample.png)
